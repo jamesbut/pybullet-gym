@@ -8,6 +8,7 @@ class HalfCheetah(WalkerBase, MJCFBasedRobot):
 
     def __init__(self):
         WalkerBase.__init__(self, power=0.90)
+        #WalkerBase.__init__(self, power=1.4)
         MJCFBasedRobot.__init__(self, "half_cheetah.xml", "torso", action_dim=6, obs_dim=26)
 
     def alive_bonus(self, z, pitch):
@@ -16,9 +17,15 @@ class HalfCheetah(WalkerBase, MJCFBasedRobot):
 
     def robot_specific_reset(self, bullet_client):
         WalkerBase.robot_specific_reset(self, bullet_client)
+        #Maybe
         self.jdict["bthigh"].power_coef = 120.0
+        #No
         self.jdict["bshin"].power_coef  = 90.0
+        #No
         self.jdict["bfoot"].power_coef  = 60.0
+        #Almost maybe
         self.jdict["fthigh"].power_coef = 140.0
+        #Maybe
         self.jdict["fshin"].power_coef  = 60.0
+        #Nar
         self.jdict["ffoot"].power_coef  = 30.0

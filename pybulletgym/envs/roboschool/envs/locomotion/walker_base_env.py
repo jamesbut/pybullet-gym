@@ -6,7 +6,7 @@ import numpy as np
 
 class WalkerBaseBulletEnv(BaseBulletEnv):
     def __init__(self, robot, render=False):
-        print("WalkerBase::__init__")
+        #print("WalkerBase::__init__")
         BaseBulletEnv.__init__(self, robot, render)
         self.camera_x = 0
         self.walk_target_x = 1e3  # kilometer away
@@ -69,7 +69,7 @@ class WalkerBaseBulletEnv(BaseBulletEnv):
         feet_collision_cost = 0.0
         for i, f in enumerate(self.robot.feet):  # TODO: Maybe calculating feet contacts could be done within the robot code
             contact_ids = set((x[2], x[4]) for x in f.contact_list())
-            # print("CONTACT OF '%d' WITH %d" % (contact_ids, ",".join(contact_names)) )
+            #print("CONTACT OF '%d' WITH %d" % (contact_ids, ",".join(contact_names)) )
             if self.ground_ids & contact_ids:
                 # see Issue 63: https://github.com/openai/roboschool/issues/63
                 # feet_collision_cost += self.foot_collision_cost

@@ -4,6 +4,7 @@ import numpy as np
 
 class WalkerBase(XmlBasedRobot):
     def __init__(self, power):
+        #print("Walker Base power:", power)
         self.power = power
         self.camera_x = 0
         self.start_pos_x, self.start_pos_y, self.start_pos_z = 0, 0, 0
